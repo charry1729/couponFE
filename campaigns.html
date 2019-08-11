@@ -26,8 +26,7 @@
    -->
 </head>
 
-<body id="page-top"> 
-    <!-- onLoad="getData() -->
+<body id="page-top" onLoad="getData()">
 
   <nav class="navbar navbar-expand navbar-dark bg-dark static-top">
 
@@ -141,7 +140,7 @@
           <span>Reedem Customers</span></a>
       </li>
       <li class="nav-item">
-          <a class="nav-link" href="distributions.html">
+          <a class="nav-link" href="distribution.html">
             <i class="fa fa-send"></i>
             <span>Distributions</span></a>
         </li>
@@ -161,10 +160,10 @@
 
 
         <!-- Page Content -->
-        <h1>Coupons</h1>
+        <h1>Campaigns</h1>
         <hr>
 <p>
-        <input type="button" class="btn btn-dark" value="Add Coupon"  onclick="showhideAddCoupon();">
+        <input type="button" class="btn btn-dark" value="Add Campaign"  onclick="showhideAddCoupon();">
     </p>     
         <hr>
         <!-- <div class="form-popup" id="myForm"> -->
@@ -174,23 +173,23 @@
 
                 <form>
                   <div class="form-group row">
-                    <label for="campaignId1" class="col-md-2 col-form-label font-weight-bold">Campaign ID</label>
+                    <label for="cname" class="col-md-2 col-form-label font-weight-bold">Campaign Name</label>
                     <div class="col-md-6">
-                      <input type="text" id="campaignId1" name="campaign name" class="form-control" placeholder="name of your campaign">
+                      <input type="text" id="cname" name="campaign name" class="form-control" placeholder="name of your campaign">
                     </div>
                   </div>
-            
+                 
                   <div class="form-group row">
                     
-                    <label for="quantity1"  class="col-md-2 col-form-label font-weight-bold">Quantity</label>
+                    <label for="ccode"  class="col-md-2 col-form-label font-weight-bold">Coupon Code</label>
                     
                     <div class="col-sm-4">
-                    <input type="text" id="quantity1" name="couponcode" class="form-control" placeholder="quantity">
+                    <input type="text" id="ccode" name="couponcode" class="form-control" placeholder="assign coupon code">
                     </div>
                   </div>
 
 
-                    <!-- <div class="form-group row">
+                    <div class="form-group row">
                        <label for="coupontype" class="col-md-2 col-form-label font-weight-bold">Coupon Type</label>
                        <div class="col-md-4">
                             <select id="coupontype" name="coupontype">
@@ -198,23 +197,32 @@
                               <option value="off type">Off type</option>
                             </select>
                           </div>
-                    </div> -->
-
-
+                    </div>
                     <div class="form-group row">
-                    <label for="customerId1" class="col-md-2 col-form-label font-weight-bold">Customer Id</label>
+                    <label for="company" class="col-md-2 col-form-label font-weight-bold">Company</label>
                     <div class="col-md-6">
-                    <input type="text" id="customerId1" name="customerId1"  class="form-control" placeholder="customerId1">
+                    <input type="text" id="company" name="company"  class="form-control" placeholder="company">
                     </div>
                     </div>
- 
+                   
                     <div class="form-group row">
-                        <label for="distchannel" class="col-md-2 col-form-label font-weight-bold">Dist channel</label>
-                        <div class="col-md-6">
-                        <input type="text" id="distchannel" name="distchannel1"  class="form-control" placeholder="distchannel">
-                        </div>
-                        </div>
 
+                    <label for="astatus" class="col-sm-2 col-form-label font-weight-bold">Active Status</label>
+                    <div class="col-md-4">
+                    <!-- <input type="text" id="astatus" class="form-control" name="astatus" placeholder="yes or no"> -->
+                    <div class="form-check-inline">
+                      <label class="form-check-label">
+                        <input type="radio" id="astatus" class="form-check-input" name="optradio">Yes
+                      </label>
+                    </div>
+                    <div class="form-check-inline">
+                      <label class="form-check-label">
+                        <input type="radio" id="astatus" class="form-check-input" name="optradio">No
+                      </label>
+                    </div>
+                    
+                    </div>
+                    </div>
 
 
                     <div class="form-group row">
@@ -233,53 +241,25 @@
                     <input type="date" id="edate" class="form-control" name="edate" placeholder="end date">
                     </div>
                     </div>
-  
+                    
                 
                     <div class="form-group row">
-                    <label for="astatus" class="col-md-2 col-form-label font-weight-bold">Status</label>
+                    <label for="redeemstatus" class="col-md-2 col-form-label font-weight-bold">Reedem Status</label>
                     <div class="col-md-4">
-                    <input type="text" id="astatus" class="form-control" name="status" placeholder="status">
+                    <input type="text" id="redeemstatus" class="form-control" name="redeemstatus" placeholder="status">
                     </div>
                     </div>
-
 
                     <div class="form-group row">
-                        <label for="amount1" class="col-md-2 col-form-label font-weight-bold">Amount</label>
-                        <div class="col-md-4">
-                        <input type="text" id="amount1" class="form-control" name="status" placeholder="status">
-                        </div>
-                        </div>
-                    <!-- <div class="form-group row">
                     <label for="redeemmount" class="col-md-2 col-form-label font-weight-bold">Redeem Amount</label>
                     <div class="col-md-4">
                     <input type="text" id="redeemmount"  class="form-control" name="redeemmount" placeholder="amount">
                     </div>
                     </div>
 
-
-                    <div class="form-group row">
-
-                        <label for="astatus" class="col-sm-2 col-form-label font-weight-bold">Active Status</label>
-                        <div class="col-md-4">
-                        <input type="text" id="astatus" class="form-control" name="astatus" placeholder="yes or no"> 
-                        <div class="form-check-inline">
-                          <label class="form-check-label">
-                            <input type="radio" id="astatus" class="form-check-input" name="optradio">Yes
-                          </label>
-                        </div>
-                        <div class="form-check-inline">
-                          <label class="form-check-label">
-                            <input type="radio" id="astatus" class="form-check-input" name="optradio">No
-                          </label>
-                        </div>
-                         
-                        </div>
-                        </div>-->
-
-
                     <div class="row">
                       <div class="col text-center">
-                         <button class="btn btn-default" ></button>
+                        <!-- <button class="btn btn-default">Centered button</button> -->
                         <input type="button"  class=" btn btn-default btn-primary" value="Submit" onclick="generateCouponData()">
                       </div>
                     </div>
@@ -288,13 +268,7 @@
                 </div>
         </div>
         <hr>
-        <!-- \"campaignId\": \"5d46a9ca89f17d1cd12e69ed\",
-        \"quantity\":\"20\",
-        \"customerId\":\"12345678\",
-        \"startdate\":\"04-Aug-2019\",
-        \"enddate\":\"04-Sep-2019\",
-        \"status\":\"Active\",
-        \"amount\":\"2000\" -->
+
 
         <!-- DataTables Example -->
         <div class="card mb-3">
@@ -306,33 +280,37 @@
                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                     <thead>
                     <tr>
-                      <th>Campaign Id</th>
-                      <th>Quantity</th>
-                      <th>Customer Id</th>
+                      <th>Campaign Name</th>
+                      <th>Coupon Code</th>
+                      <th>Coupon type</th>
+                      <th>Company</th>
+                      <th>Active Status</th>
                       <th>Start date</th>
-                      <th>End date</th>
+                      <th>Expiry date</th>
                       <th>Redeem Status</th>
                       <th>Redeem Amount</th>
                       </tr>
                       </thead>
                       <tfoot>
                     <tr>
-                        <th>Campaign Id</th>
-                        <th>Quantity</th>
-                        <th>Customer Id</th>
+                        <th>Campaign Name</th>
+                        <th>Coupon Code</th>
+                        <th>Coupon type</th>
+                        <th>Company</th>
+                        <th>Active Status</th>
                         <th>Start date</th>
-                        <th>End date</th>
+                        <th>Expiry date</th>
                         <th>Redeem Status</th>
                         <th>Redeem Amount</th>
                       </tr>
                       </tfoot>
-                      <!-- <tbody id="tBody"> -->
-                            <tbody id="tBody">
-
-                                <tr>
-                        <td>5d4cf01184750f23e508b243</td>
-                        <td>20</td>
-                        <td>abc@gmail.com</td>
+                      <tbody id="tBody">
+                    <!-- <tr>
+                        <td>Discounts</td>
+                        <td>SWIGGYIT</td>
+                        <td>%</td>
+                        <td>xyz RESTAURANT</td>
+                        <td>Yes</td>
                         <td>02-02-2019</td>
                         <td>04-05-2033</td>
                         <td>redeemed</td>
@@ -340,17 +318,10 @@
                     </tr>
                     <tr>
                         <td>Discounts</td>
-                        <td>3</td>
-                        <td>naresh@gmail.com</td>
-                        <td>02-02-2019</td>
-                        <td>04-05-2033</td>
-                        <td>redeemed</td>
-                        <td>100</td>
-                    </tr>
-                    <tr>
-                        <td>5d4cf01184750f23e508b243</td>
-                        <td>1</td>
-                        <td>chary@gmail.com</td>
+                        <td>SWIGGYIT</td>
+                        <td>%</td>
+                        <td>xyz RESTAURANT</td>
+                        <td>Yes</td>
                         <td>02-02-2019</td>
                         <td>04-05-2033</td>
                         <td>redeemed</td>
@@ -358,8 +329,10 @@
                     </tr>
                     <tr>
                         <td>Discounts</td>
-                        <td>11</td>
-                        <td>abcd@gmail.com</td>
+                        <td>SWIGGYIT</td>
+                        <td>%</td>
+                        <td>xyz RESTAURANT</td>
+                        <td>Yes</td>
                         <td>02-02-2019</td>
                         <td>04-05-2033</td>
                         <td>redeemed</td>
@@ -367,13 +340,26 @@
                     </tr>
                     <tr>
                         <td>Discounts</td>
-                        <td>32</td>
-                        <td>a21bcd@gmail.com</td>
+                        <td>SWIGGYIT</td>
+                        <td>%</td>
+                        <td>xyz RESTAURANT</td>
+                        <td>Yes</td>
                         <td>02-02-2019</td>
                         <td>04-05-2033</td>
                         <td>redeemed</td>
                         <td>100</td>
                     </tr>
+                    <tr>
+                        <td>Discounts</td>
+                        <td>SWIGGYIT</td>
+                        <td>%</td>
+                        <td>xyz RESTAURANT</td>
+                        <td>Yes</td>
+                        <td>02-02-2019</td>
+                        <td>04-05-2033</td>
+                        <td>redeemed</td>
+                        <td>100</td>
+                    </tr> -->
                   </tbody>
                 </table>
               </div>
@@ -495,35 +481,21 @@ function showhideAddCoupon() {
 }
 async function generateCouponData() {
     
-
-    // \"campaignId\": \"5d46a9ca89f17d1cd12e69ed\",
-    // \"quantity\":\"20\",
-    // \"customerId\":\"12345678\",
-    // \"startdate\":\"04-Aug-2019\",
-    // \"enddate\":\"04-Sep-2019\",
-    // \"status\":\"Active\",
-    // \"amount\":\"2000\"
-
-    
     couponData = {    
-        campaignId :  document.getElementById("campaignId1").value,
-        quantity :  document.getElementById("quantity1").value,
-        customerId :  document.getElementById("customerId1").value,
-
-//      price: document.getElementById("redeemmount").value,
-//      vouchers: document.getElementById("redeemmount").value,
+      name: document.getElementById("cname").value,
+      price: document.getElementById("redeemmount").value,
+      vouchers: document.getElementById("redeemmount").value,
       startdate: document.getElementById("sdate").value,
       enddate: document.getElementById("edate").value,
-      status: document.getElementById("astatus").value    , 
-      amount: document.getElementById("amount1").value     
+      status: document.getElementById("astatus").value     
     };
     console.log("coupon" + JSON.stringify(couponData));
    // alert("coupondata"+ couponData)
     const res3 = await createCoupon();
     console.log("response"+JSON.stringify(res3));
    // if (res3.message === "Created Campaign") {
-      alert("issued coupon to customer successfully");
-      console.log("issued coupon successfully");
+      alert("Created compaign successfully");
+      console.log("Created compaign successfully");
       var x = document.getElementById("addcoupon");     
         x.style.display = "none";
       
@@ -532,96 +504,90 @@ async function generateCouponData() {
     }
   //}
 
-//   function getData(){
-//     let HOST_URL="http://localhost:3003"
-//     let result;
+  function getData(){
+    let HOST_URL="http://localhost:3003"
+    let result;
     
-//    // let token="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InByaXlhc3d0QGdtYWlsLmNvbSIsInVzZXJJZCI6IjVkNGE2MGM0Y2M0YTA5MTdiODFkNzA3NCIsImlhdCI6MTU2NTE2MDE3MywiZXhwIjoxNTY1MTYzNzczfQ.EnbtcH47b0NBAcs692bDtFn5zd6dfMxYS7pw3zgod9c";
-//   // let token="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InJvaGl0aDRAZ21haWwuY29tIiwidXNlcklkIjoiNWQ0OWFlNDMxZjBmZWI2Y2IwYThiN2Q3IiwiaWF0IjoxNTY1MjU1MzE4LCJleHAiOjE1NjUyNTg5MTh9.ZaFiscbyjSVFPPYTDK9saCZW9uXlk9P1-g6AJq2G5_8"
-//    let token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InJvaGl0aDRAZ21haWwuY29tIiwidXNlcklkIjoiNWQ0OWFlNDMxZjBmZWI2Y2IwYThiN2Q3IiwiaWF0IjoxNTY1MzIyNzk0LCJleHAiOjE1NjUzMjYzOTR9.CXkUvq1X1cI4NaTzY9ICbOaZbpovUJpHtDb4Id6KrUc";
+   // let token="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InByaXlhc3d0QGdtYWlsLmNvbSIsInVzZXJJZCI6IjVkNGE2MGM0Y2M0YTA5MTdiODFkNzA3NCIsImlhdCI6MTU2NTE2MDE3MywiZXhwIjoxNTY1MTYzNzczfQ.EnbtcH47b0NBAcs692bDtFn5zd6dfMxYS7pw3zgod9c";
+  // let token="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InJvaGl0aDRAZ21haWwuY29tIiwidXNlcklkIjoiNWQ0OWFlNDMxZjBmZWI2Y2IwYThiN2Q3IiwiaWF0IjoxNTY1MjU1MzE4LCJleHAiOjE1NjUyNTg5MTh9.ZaFiscbyjSVFPPYTDK9saCZW9uXlk9P1-g6AJq2G5_8"
+   let token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InJvaGl0aDRAZ21haWwuY29tIiwidXNlcklkIjoiNWQ0OWFlNDMxZjBmZWI2Y2IwYThiN2Q3IiwiaWF0IjoxNTY1MzIyNzk0LCJleHAiOjE1NjUzMjYzOTR9.CXkUvq1X1cI4NaTzY9ICbOaZbpovUJpHtDb4Id6KrUc";
    
-//     var Success = false;
-//     $.ajax({
-//         type: "get",
-//         url: HOST_URL + "/" + "vouchers",
-//         dataType: "json",
-//         async:false,
+    var Success = false;
+    $.ajax({
+        type: "get",
+        url: HOST_URL + "/" + "campaigns",
+        dataType: "json",
+        async:false,
         
-//         contentType: "application/json; charset=utf-8",
-//         success: function (data) {
-//           var trHTML = '';
-//           console.log("success");
-//             Success = true;//doesnt goes here
-//             //console.log("retData"+ JSON.stringify(data));
-//             records = data;
-//                   console.log(records);
-//                   // totalRecords = records.length;
-//                   // totalPages = Math.ceil(totalRecords / recPerPage);
-//                   // apply_pagination();
-//                   $.each(data, function (i, campaigns) {
-//                           for (i = 0; i < data.campaigns.length; i++) {
-//                               trHTML +=
-//                                   '<tr><td>Mega Offer'
-//                                   +'</td><td>'
-//                                   + data.campaigns[i].name
-//                                   + '</td><td>%'
-//                                   + '</td><td>XYZ PVT LTD'
-//                                   + '</td><td>'
-//                                   + data.campaigns[i].status
-//                                   + '</td><td>'
-//                                   + data.campaigns[i].startdate
-//                                   + '</td><td>'
-//                                   + data.campaigns[i].enddate
-//                                   + '</td><td>Redeem'                                 
-//                                   + '</td><td>'
-//                                   + data.campaigns[i].price
-//                                   + '</td>'
-//                                   + '</tr>';
-//                           }
-//                       });
-//                       $('#tBody').append(trHTML);
-//         },
-//         error: function (textStatus, errorThrown) {
-//           alert("error"+ textStatus + ";" +errorThrown);
-//             Success = false;//doesnt goes here
-//         }
+        contentType: "application/json; charset=utf-8",
+        success: function (data) {
+          var trHTML = '';
+          alert("success");
+            Success = true;//doesnt goes here
+            //console.log("retData"+ JSON.stringify(data));
+            records = data;
+                  console.log(records);
+                  // totalRecords = records.length;
+                  // totalPages = Math.ceil(totalRecords / recPerPage);
+                  // apply_pagination();
+                  $.each(data, function (i, campaigns) {
+                          for (i = 0; i < data.campaigns.length; i++) {
+                              trHTML +=
+                                  '<tr><td>Mega Offer'
+                                  +'</td><td>'
+                                  + data.campaigns[i].name
+                                  + '</td><td>%'
+                                  + '</td><td>XYZ PVT LTD'
+                                  + '</td><td>'
+                                  + data.campaigns[i].status
+                                  + '</td><td>'
+                                  + data.campaigns[i].startdate
+                                  + '</td><td>'
+                                  + data.campaigns[i].enddate
+                                  + '</td><td>Redeem'                                 
+                                  + '</td><td>'
+                                  + data.campaigns[i].price
+                                  + '</td>'
+                                  + '</tr>';
+                          }
+                      });
+                      $('#tBody').append(trHTML);
+        },
+        error: function (textStatus, errorThrown) {
+          alert("error"+ textStatus + ";" +errorThrown);
+            Success = false;//doesnt goes here
+        }
 
-//     });
-//     //done after here
-//     return Success;
+    });
+    //done after here
+    return Success;
  
 
-//   }
-
-
-
-//   function generate_table() {
-//     var tr;
-//     $('#emp_body').html('');
-//     for (var i = 0; i < displayRecords.length; i++) {
-//           tr = $('<tr/>');
-//           tr.append("<td>" + displayRecords[i].employee_name + "</td>");
-//           tr.append("<td>" + displayRecords[i].employee_salary + "</td>");
-//           tr.append("<td>" + displayRecords[i].employee_age + "</td>");
-//           $('#emp_body').append(tr);
-//     }
-// }
-// function apply_pagination() {
-//   $pagination.twbsPagination({
-//         totalPages: totalPages,
-//         visiblePages: 6,
-//         onPageClick: function (event, page) {
-//               displayRecordsIndex = Math.max(page - 1, 0) * recPerPage;
-//               endRec = (displayRecordsIndex) + recPerPage;
+  }
+  function generate_table() {
+    var tr;
+    $('#emp_body').html('');
+    for (var i = 0; i < displayRecords.length; i++) {
+          tr = $('<tr/>');
+          tr.append("<td>" + displayRecords[i].employee_name + "</td>");
+          tr.append("<td>" + displayRecords[i].employee_salary + "</td>");
+          tr.append("<td>" + displayRecords[i].employee_age + "</td>");
+          $('#emp_body').append(tr);
+    }
+}
+function apply_pagination() {
+  $pagination.twbsPagination({
+        totalPages: totalPages,
+        visiblePages: 6,
+        onPageClick: function (event, page) {
+              displayRecordsIndex = Math.max(page - 1, 0) * recPerPage;
+              endRec = (displayRecordsIndex) + recPerPage;
              
-//               displayRecords = records.slice(displayRecordsIndex, endRec);
-//               generate_table();
-//         }
-//   });
-// }
-
-
-
+              displayRecords = records.slice(displayRecordsIndex, endRec);
+              generate_table();
+        }
+  });
+}
 // function for adding coupon
 async function createCoupon() {
   let HOST_URL="http://localhost:3003"
@@ -655,7 +621,7 @@ async function createCoupon() {
     try {
 
       result = await $.ajax({
-        url: HOST_URL + "/" + "vouchers",
+        url: HOST_URL + "/" + "campaigns",
         headers: { 'authorization': 'Bearer ' + token },
         type: 'post',
         data: JSON.stringify(couponData),

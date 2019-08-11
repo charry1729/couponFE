@@ -25,47 +25,49 @@
     <div class="card card-register mx-auto mt-5">
       <div class="card-header">Register an Account</div>
       <div class="card-body">
-        <form>
+        <form>          
           <div class="form-group">
-            <div class="form-row">
-              <div class="col-md-6">
-                <div class="form-label-group">
-                  <input type="text" id="firstName" class="form-control" placeholder="First name" required="required" autofocus="autofocus">
-                  <label for="firstName">First name</label>
-                </div>
-              </div>
-              <div class="col-md-6">
-                <div class="form-label-group">
-                  <input type="text" id="lastName" class="form-control" placeholder="Last name" required="required">
-                  <label for="lastName">Last name</label>
-                </div>
-              </div>
+              <div class="form-row">
+                  <div class="col-md-6">
+                      <div class="form-label-group">
+                      <input type="email" name = "email" id="email" class="form-control" placeholder="Email address" required="required">
+                     <label for="inputEmail">Email address</label>
+                      </div>
+                  </div>
+                  <div class="col-md-6">
+                      <div class="form-label-group">
+                      <input type="password" name = "password"  id="password" class="form-control" placeholder="password" required="required">
+                     <label for="inputPassword">Password</label>
+                      </div>
+                  </div>
+                  
+                  <div class="col-md-6">
+                      <div class="form-label-group">
+                      <input type="phonenumber  " id="phonenumber" class="form-control" placeholder="phonenumber" required="required">
+                     <label for="inputPhone">Phone number</label>
+                      </div>
+                  </div>
+              
+                   <div class="col-md-6">
+                      <div class="form-label-group">
+                      <input type="distchannel" id="distchannel" class="form-control" placeholder="Distibution channel" required="required">
+                     <label for="inputDist">Distibution channel</label>
+                      </div>
+                  </div>
+                      <div class="col-md-6">
+                      <div class="form-label-group">
+                      <input type="role" id="role" class="form-control" placeholder="Admin or User" required="required">
+                     <label for="inputRole">Role</label>
+                      </div>
+                  </div>
             </div>
           </div>
-          <div class="form-group">
-            <div class="form-label-group">
-              <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required="required">
-              <label for="inputEmail">Email address</label>
-            </div>
-          </div>
-          <div class="form-group">
-            <div class="form-row">
-              <div class="col-md-6">
-                <div class="form-label-group">
-                  <input type="password" id="inputPassword" class="form-control" placeholder="Password" required="required">
-                  <label for="inputPassword">Password</label>
-                </div>
-              </div>
-              <div class="col-md-6">
-                <div class="form-label-group">
-                  <input type="password" id="confirmPassword" class="form-control" placeholder="Confirm password" required="required">
-                  <label for="confirmPassword">Confirm password</label>
-                </div>
-              </div>
-            </div>
-          </div>
-          <a class="btn btn-primary btn-block" href="login.html">Register</a>
+
+
+
+          <button class="btn btn-primary btn-block" onclick="register()" href="login.html">Register</button>
         </form>
+
         <div class="text-center">
           <a class="d-block small mt-3" href="login.html">Login Page</a>
           <a class="d-block small" href="forgot-password.html">Forgot Password?</a>
@@ -80,6 +82,59 @@
 
   <!-- Core plugin JavaScript-->
   <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+
+  <script>
+
+  var email,password,phonenumber,logindate,distchannel,role;
+
+
+    async function register(){
+        email = $("#email").val();
+        password = $("#password").val();
+        phonenumber = $("#phonenumber").val();
+        logindate = Date();
+        distchannel = $("#distchannel").val();
+        role = $("#role").val();
+
+        data = {
+        email: email,
+        password:password,
+        phonenumber:phonenumber,
+        logindate:logindate,
+        distchannel:distchannel,
+        role:role
+        }
+
+       console.log(data);
+
+      var params = {
+        type : 'post',
+        url: "localhost:3000/user/signup",
+        data: JSON.stringify(data),
+        contentType: 'application/json;charset=UTF-8',
+        dataType: 'json'
+    }
+    console.log(params.data);
+    let result;
+    try {
+        result = await $.ajax(params);
+        return result;
+    }
+    catch (error) {
+        if (error) {
+            console.log(error);
+      }
+    }
+
+    alert('success');
+    window.location.href = "../admin/login.html"
+
+}  
+
+
+
+</script>
 
 </body>
 

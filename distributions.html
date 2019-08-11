@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -9,17 +10,59 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>SB Admin - Tables</title>
+  <title>Vocucher Management</title>
 
   <!-- Custom fonts for this template-->
   <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
   <!-- Page level plugin CSS-->
   <link href="vendor/datatables/dataTables.bootstrap4.css" rel="stylesheet">
 
   <!-- Custom styles for this template-->
   <link href="css/sb-admin.css" rel="stylesheet">
-
+  <link href="css/addcoupon.css" rel="stylesheet">
+  <meta http-equiv="x-ua-compatible" content="IE=Edge" />
+  <script src="coupons.js"></script>
+  <style>
+      .numberCircle {
+  border-radius: 50%;
+  behavior: url(PIE.htc);
+  /* remove if you don't care about IE8 */
+  width: 20px;
+  height: 20px;
+  padding: 5px;
+  background: transparent;
+  border: 1.5px solid #fff;
+  color: #fff;
+  text-align: center;
+  font: 15px Arial, sans-serif;
+}
+.panel-clr {
+    background-color:greenyellow;
+} 
+    
+.panel-clr.on {
+    background-color:dodgerblue;
+}
+.card-header.collapsed {
+    background:#ee6666;;
+}
+.card-header:not(.collapsed) {
+    background:rgb(52,180,172)
+}
+.header{
+    padding: 5px;
+    color: #fff;
+    font-size: 18px;
+    font-weight: 400;
+    font-family: Roboto,Helvetica Neue,sans-serif;
+    letter-spacing: .005em;
+}
+.channelpadding{
+    padding: 5px;
+}
+  </style>
 </head>
 
 <body id="page-top">
@@ -108,7 +151,7 @@
           <div class="dropdown-divider"></div>
           <h6 class="dropdown-header">Other Pages:</h6>
           <a class="dropdown-item" href="404.html">404 Page</a>
-          <a class="dropdown-item" href="blank.html">Blank Page</a>
+          <a class="dropdown-item active" href="blank.html">Blank Page</a>
         </div>
       </li>
       <li class="nav-item">
@@ -117,15 +160,22 @@
           <span>Charts</span></a>
       </li>
       <li class="nav-item">
-          <a class="nav-link" href="coupons.html">
-            <i class="fas fa-fw fa-table"></i>
-            <span>Coupons</span></a>x`
-        </li>
-      <li class="nav-item active">
-        <a class="nav-link" href="tables.html">
+        <a class="nav-link" href="campaigns.html">
           <i class="fas fa-fw fa-table"></i>
-          <span>Campaign Tables</span></a>
+          <span>Campaigns</span></a>
       </li>
+
+      <li class="nav-item">
+        <a class="nav-link" href="coupons.html">
+          <i class="fas fa-fw fa-table"></i>
+          <span>Coupons</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="distributions.html">
+          <i class="fas fa-fw fa-table"></i>
+          <span>Distributions</span></a>
+      </li>
+
       <li class="nav-item">
         <a class="nav-link" href="customers.html">
           <i class="fas fa-fw fa-table"></i>
@@ -143,120 +193,94 @@
       <div class="container-fluid">
 
         <!-- Breadcrumbs-->
-        <ol class="breadcrumb">
+        <!-- <ol class="breadcrumb">
           <li class="breadcrumb-item">
-            <a href="#">Dashboard</a>
+            <a href="index.html">Dashboard</a>
           </li>
-          <li class="breadcrumb-item active">Tables</li>
-        </ol>
+          <li class="breadcrumb-item active">Blank Page</li>
+        </ol> -->
 
-        <!-- DataTables Example -->
-        <div class="card mb-3">
-          <div class="card-header">
-            <i class="fas fa-table"></i>
-            Data Table Example</div>
-          <div class="card-body">
-            <div class="table-responsive">
-              <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                  <thead>
-                  <tr>
-                    <th>Campaign Name</th>
-                    <th>Status</th>
-                    <th>Redeem Office</th>
-                    <th>Quantity</th>
-                    <th>Start date</th>
-                    <th>Expiry date</th>
-                    <th>Redeem Amount</th>
-                    </tr>
-                    </thead>
-                    <tfoot>
-                  <tr>
-                    <th>Campaign Name</th>
-                    <th>Status</th>
-                    <th>Redeem Office</th>
-                    <th>Quantity</th>
-                    <th>Start date</th>
-                    <th>Expiry date</th>
-                    <th>Redeem Amount</th>
-                    </tr>
-                    </tfoot>
-                    <tbody>
-                  <tr>
-                    <td>Discounts %</td>
-                    <td>Active</td>
-                    <td>Edinburgh</td>
-                    <td>100</td>
-                    <td>2011/04/25</td>
-                    <td>2015/04/25</td>
-                    <td>20%</td>
-                  </tr>
-                  <tr>
-                    <td>Discounts value off</td>
-                    <td>Active</td>
-                    <td>Hyderabad</td>
-                    <td>600</td>
-                    <td>2011/04/25</td>
-                    <td>2015/04/25</td>
-                    <td>$320</td>
-                  </tr>
-                  <tr>
-                    <td>Discounts</td>
-                    <td>Not Active</td>
-                    <td>Edin Garden</td>
-                    <td>61</td>
-                    <td>2009/04/25</td>
-                    <td>2011/04/25</td>
-                    <td>$320</td>
-                  </tr>
-                  <tr>
-                    <td>Discounts</td>
-                    <td>Active</td>
-                    <td>Edinburgh</td>
-                    <td>61</td>
-                    <td>2011/04/25</td>
-                    <td>2015/04/25</td>
-                    <td>$320</td>
-                  </tr>
-                  <tr>
-                    <td>Discounts</td>
-                    <td>Active</td>
-                    <td>Edinburgh</td>
-                    <td>61</td>
-                    <td>2011/04/25</td>
-                    <td>2015/04/25</td>
-                    <td>$320</td>
-                  </tr>
-                  <tr>
-                    <td>Discounts</td>
-                    <td>Active</td>
-                    <td>Edinburgh</td>
-                    <td>61</td>
-                    <td>2011/04/25</td>
-                    <td>2015/04/25</td>
-                    <td>$320</td>
-                  </tr>
-                  <tr>
-                    <td>Discounts</td>
-                    <td>Active</td>
-                    <td>Edinburgh</td>
-                    <td>61</td>
-                    <td>2011/04/25</td>
-                    <td>2015/04/25</td>
-                    <td>$320</td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-          </div>
-          <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>
-        </div>
 
-        <p class="small text-center text-muted my-5">
-          <em>More table examples coming soon...</em>
-        </p>
-
-      </div>
+        <!-- Page Content -->
+        <h1>Distribution Channels</h1>
+        <hr>
       <!-- /.container-fluid -->
+<!-- 
+      <div class="panel-group">
+            <div class="panel panel-default">
+              <div class="panel-heading">
+                <h4 class="panel-title">
+                  <a data-toggle="collapse" href="#collapse1">Collapsible panel</a>
+                </h4>
+              </div>
+              <div id="collapse1" class="panel-collapse collapse">
+                <div class="panel-body">Panel Body</div>
+                <div class="panel-footer">Panel Footer</div>
+              </div>
+            </div>
+          </div> -->
+
+            <div id="accordion">
+                    <div class="card">
+                      <div class="card-header" id="headingOne" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                        <h5 class="mb-0">
+                                <span class="numberCircle">1</span><span class="header">
+                           Select distribution type
+                        </span>
+                        </h5>
+                      </div>
+                  
+                      <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+                        <div class="card-body">
+                         
+                        </div>
+                      </div>
+                    </div>
+                    <div class="card">
+                      <div class="card-header collapsed" id="headingTwo" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                        <h5 class="mb-0 " >
+                                <span class="numberCircle">2</span><span class="header">
+                                        Choose your audience
+                                     </span>
+                        </h5>
+                      </div>
+                      <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+                        <div class="card-body">
+                         
+                        </div>
+                      </div>
+                    </div>
+                    <div class="card">
+                      <div class="card-header collapsed" id="headingThree" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                        <h5 class="mb-0">
+                                <span class="numberCircle">3</span><span class="header">
+                                        Select your channel
+                                     </span>
+                        </h5>
+                      </div>
+                      <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
+                        <div class="card-body">
+     
+                                <div class="d-flex p-3 bg-secondary text-white channelpadding">
+                                        <div class="p-2 bg-info channelpadding text-center" style="margin-right: 5px">
+                                            <button  class="btn btn-primary">
+                                            <i class="fas fa-envelope"></i>
+                                                <div class="channeloption text-center">Email</div>
+                                            </button>
+                                        </div>
+                                        <div class="p-2 bg-info channelpadding text-center">
+                                                <button class="btn btn-primary">
+                                            <i class="fas fa-mobile-alt"></i>
+                                            <div class="channeloption text-center">Sms</div>
+                                        </button>
+                                        </div>
+                                        <!-- <div class="p-2 bg-primary">Flex item 3</div> -->
+                                      </div>
+
+                        </div>
+                      </div>
+                    </div>
+                  </div>
 
       <!-- Sticky Footer -->
       <footer class="sticky-footer">
@@ -304,16 +328,17 @@
   <!-- Core plugin JavaScript-->
   <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
 
-  <!-- Page level plugin JavaScript-->
-  <script src="vendor/datatables/jquery.dataTables.js"></script>
-  <script src="vendor/datatables/dataTables.bootstrap4.js"></script>
-
   <!-- Custom scripts for all pages-->
   <script src="js/sb-admin.min.js"></script>
-
-  <!-- Demo scripts for this page-->
-  <script src="js/demo/datatables-demo.js"></script>
-
+  <script src="js/bootstrap-datetimepicker.min.js"></script>
+  <script> 
+    
+        $( function() {
+          $('.panel-clr').click( function() {
+              $(this).toggleClass('on');
+        } )
+        });    
+        </script> 
 </body>
 
 </html>

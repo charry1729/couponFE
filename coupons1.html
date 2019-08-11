@@ -9,7 +9,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>SB Admin - Tables</title>
+  <title>SB Admin - Blank Page</title>
 
   <!-- Custom fonts for this template-->
   <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -19,6 +19,7 @@
 
   <!-- Custom styles for this template-->
   <link href="css/sb-admin.css" rel="stylesheet">
+  <link href="css/addcoupon.css" rel="stylesheet">
 
 </head>
 
@@ -108,7 +109,7 @@
           <div class="dropdown-divider"></div>
           <h6 class="dropdown-header">Other Pages:</h6>
           <a class="dropdown-item" href="404.html">404 Page</a>
-          <a class="dropdown-item" href="blank.html">Blank Page</a>
+          <a class="dropdown-item active" href="blank.html">Blank Page</a>
         </div>
       </li>
       <li class="nav-item">
@@ -150,91 +151,200 @@
       <div class="container-fluid">
 
         <!-- Breadcrumbs-->
-        <ol class="breadcrumb">
+        <!-- <ol class="breadcrumb">
           <li class="breadcrumb-item">
-            <a href="#">Dashboard</a>
+            <a href="index.html">Dashboard</a>
           </li>
-          <li class="breadcrumb-item active">Tables</li>
-        </ol>
+          <li class="breadcrumb-item active">Blank Page</li>
+        </ol> -->
+
+
+        <!-- Page Content -->
+        <h1>Coupons</h1>
+        <hr>
+<p>
+        <input type="button" class="btn btn-dark" value="Add Coupon">
+    </p>     
+        <hr>
+        <!-- <div class="form-popup" id="myForm"> -->
+
+        <div class="container">
+                <div class="jumbotron">
+
+                <form action="/action_page.php">
+                    <div>
+                        <b>
+                    <label for="cname" >Campaign Name</label>
+                        </b>
+                    <input type="text" id="cname" name="campaign name" placeholder="name of your campaign">
+                </div>
+
+                    <div>
+                    <b>
+                    <label for="ccode">Coupon Code</label>
+                    </b>
+                    
+                    <input type="text" id="ccode" name="couponcode" placeholder="assign coupon code">
+                </div>
+
+
+                    <div>
+                       <b><label for="coupontype">Coupon Type</label></b>
+
+                            <select id="coupontype" name="coupontype">
+                              <option value="percentage">Percentage</option>
+                              <option value="off type">Off type</option>
+                            </select>
+                           </div>
+                    <div><b>
+                    <label for="company">Company</label></b>
+                    <input type="text" id="company" name="company" placeholder="company">
+                    <div>
+
+                    <b><label for="astatus">Active Status</label></b>
+                    <input type="text" id="astatus" name="astatus" placeholder="yes or no">
+                    </div>
+
+
+                    <div><b>
+                    <label for="sdate" >Start Date</label></b>              
+                    <input type="text" id="sdate" name="sdate" placeholder="start date">
+                    </div>
+
+
+                    <div>
+                    <b>
+                    <label for="edate">End Date</label></b>
+                    <input type="text" id="edate" name="edate" placeholder="end date">
+                    </div>
+
+                
+                    <div><b>
+                    <label for="redeemstatus">Reedem Status</label></b>
+                    <input type="text" id="redeemstatus" name="redeemstatus" placeholder="status">
+                    </div>
+
+                    <div><b>
+                    <label for="redeemmount">Redeem Amount</label></b>
+                    <input type="text" id="redeemmount" name="redeemmount" placeholder="amount">
+                    </div>
+
+     
+                    <input type="submit" value="Submit">
+                  </form>
+                </div>
+        </div>
+        <hr>
+
 
         <!-- DataTables Example -->
         <div class="card mb-3">
-          <div class="card-header">
-            <i class="fas fa-table"></i>
-            Redeem Data Table</div>
-          <div class="card-body">
-            <div class="table-responsive">
-              <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                <thead>
-                  <tr>
-                    <th>ID</th>
-                    <th>Customer email</th>
-                    <th>Campaign Name</th>
-                    <th>Coupon Code</th>
-                    <th>Amount</th>
-                    <th>Redeem date</th>
-                    <th>Status</th>
-                  </tr>
-                </thead>
-                <tfoot>
-                  <tr>
-                      <th>ID</th>
-                      <th>Customer email</th>
+            <div class="card-header">
+              <i class="fas fa-table"></i>
+             All Coupons</div>
+            <div class="card-body">
+              <div class="table-responsive">
+                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                    <thead>
+                    <tr>
                       <th>Campaign Name</th>
                       <th>Coupon Code</th>
-                      <th>Amount</th>
-                      <th>Redeem date</th>
-                      <th>Status</th>
-                  </tr>
-                </tfoot>
-                <tbody>
-                 <tr>
-                    <td>1</td>
-                    <td>chary@email.com</td>
-                    <td>Discounts</td>
-                    <td>SWIGGYIT</td>
-                    <td>200</td>
-                    <td>2019/06/27</td>
-                    <td>SUCCESS</td>
-                  </tr>
-                  <tr>
-                      <td>2</td>
-                      <td>Customer1@email.com</td>
-                      <td>Discounts value off</td>
-                      <td>200OFF</td>
-                      <td>200</td>
-                      <td>2019/06/27</td>
-                      <td>SUCCESS</td>
-                    </tr>                 <tr>
-                        <td>3</td>
-                        <td>Customer2@email.com</td>
+                      <th>Coupon type</th>
+                      <th>Company</th>
+                      <th>Active Status</th>
+                      <th>Start date</th>
+                      <th>Expiry date</th>
+                      <th>Redeem Status</th>
+                      <th>Redeem Amount</th>
+                      </tr>
+                      </thead>
+                      <tfoot>
+                    <tr>
+                        <th>Campaign Name</th>
+                        <th>Coupon Code</th>
+                        <th>Coupon type</th>
+                        <th>Company</th>
+                        <th>Active Status</th>
+                        <th>Start date</th>
+                        <th>Expiry date</th>
+                        <th>Redeem Status</th>
+                        <th>Redeem Amount</th>
+                      </tr>
+                      </tfoot>
+                      <tbody>
+                    <tr>
                         <td>Discounts</td>
-                        <td>50%OFF</td>
-                        <td>2000</td>
-                        <td>2019/06/27</td>
-                        <td>FAILED</td>
-                      </tr>                 <tr>
-                          <td>4</td>
-                          <td>Customer3@email.com</td>
-                          <td>Discounts</td>
-                          <td>COUPON12</td>
-                          <td>200</td>
-                          <td>2019/06/27</td>
-                          <td>SUCCESS</td>
-                        </tr>
-                </tbody>
-              </table>
+                        <td>SWIGGYIT</td>
+                        <td>%</td>
+                        <td>xyz RESTAURANT</td>
+                        <td>Yes</td>
+                        <td>02-02-2019</td>
+                        <td>04-05-2033</td>
+                        <td>redeemed</td>
+                        <td>100</td>
+                    </tr>
+                    <tr>
+                        <td>Discounts</td>
+                        <td>SWIGGYIT</td>
+                        <td>%</td>
+                        <td>xyz RESTAURANT</td>
+                        <td>Yes</td>
+                        <td>02-02-2019</td>
+                        <td>04-05-2033</td>
+                        <td>redeemed</td>
+                        <td>100</td>
+                    </tr>
+                    <tr>
+                        <td>Discounts</td>
+                        <td>SWIGGYIT</td>
+                        <td>%</td>
+                        <td>xyz RESTAURANT</td>
+                        <td>Yes</td>
+                        <td>02-02-2019</td>
+                        <td>04-05-2033</td>
+                        <td>redeemed</td>
+                        <td>100</td>
+                    </tr>
+                    <tr>
+                        <td>Discounts</td>
+                        <td>SWIGGYIT</td>
+                        <td>%</td>
+                        <td>xyz RESTAURANT</td>
+                        <td>Yes</td>
+                        <td>02-02-2019</td>
+                        <td>04-05-2033</td>
+                        <td>redeemed</td>
+                        <td>100</td>
+                    </tr>
+                    <tr>
+                        <td>Discounts</td>
+                        <td>SWIGGYIT</td>
+                        <td>%</td>
+                        <td>xyz RESTAURANT</td>
+                        <td>Yes</td>
+                        <td>02-02-2019</td>
+                        <td>04-05-2033</td>
+                        <td>redeemed</td>
+                        <td>100</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
             </div>
+            <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>
           </div>
-          <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>
-        </div>
-
-        <p class="small text-center text-muted my-5">
-          <em>More table examples coming soon...</em>
-        </p>
+  
+          <p class="small text-center text-muted my-5">
+            <em>More table examples coming soon...</em>
+          </p>
 
       </div>
+      
       <!-- /.container-fluid -->
+
+
+
+
 
       <!-- Sticky Footer -->
       <footer class="sticky-footer">
@@ -282,15 +392,60 @@
   <!-- Core plugin JavaScript-->
   <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
 
-  <!-- Page level plugin JavaScript-->
-  <script src="vendor/datatables/jquery.dataTables.js"></script>
-  <script src="vendor/datatables/dataTables.bootstrap4.js"></script>
-
   <!-- Custom scripts for all pages-->
   <script src="js/sb-admin.min.js"></script>
+  <script>
+  
+  var campaignId,quantity,customerId,startdate,enddate,status,amount;
 
-  <!-- Demo scripts for this page-->
-  <script src="js/demo/datatables-demo.js"></script>
+  async function addcoupon(){
+
+    campaignId=$("campaignId").val();
+    quantity=$("quantity").val();
+    customerId=$("customerId").val();
+    startdate=$("startdate").val();
+    enddate=$("enddate").val();
+    status=$("status").val();
+    amount=$("amount").val();
+
+    data = {
+    campaignId:campaignId,
+    quantity:quantity,
+    customerId:customerId,
+    startdate:startdate,
+    enddate:enddate,
+    status:status,
+    amount:amount
+}
+var params = {
+        type : 'post',
+        url: "localhost:3000/vouchers",
+        data: JSON.stringify(data),
+        contentType: 'application/json;charset=UTF-8',
+        dataType: 'json'
+    }
+    console.log(params.data);
+    let result;
+    try {
+        result = await $.ajax(params);
+        return result;
+    }
+    catch (error) {
+        if (error) {
+            console.log(error);
+      }
+    }
+
+    alert('success');
+
+
+
+
+  }
+
+  
+  
+  </script>
 
 </body>
 

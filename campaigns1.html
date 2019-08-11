@@ -150,78 +150,189 @@
       <div class="container-fluid">
 
         <!-- Breadcrumbs-->
-        <ol class="breadcrumb">
+        <!-- <ol class="breadcrumb">
           <li class="breadcrumb-item">
             <a href="#">Dashboard</a>
           </li>
           <li class="breadcrumb-item active">Tables</li>
-        </ol>
+        </ol> -->
+
+
+
+
+        <h1>All Campaigns</h1>
+        <hr>
+        <p>
+        <input type="button" class="btn btn-dark" value="Click here to Add Campaign"  onclick="showhideAddCampaign()">
+        </p>     
+        <hr>
+
+        <div class="container" id="addcampaign" style="display: none">
+                <div class="jumbotron">
+
+                <form>
+                  <div class="form-group row">
+                    <label for="name" class="col-md-2 col-form-label font-weight-bold">Campaign Name</label>
+                    <div class="col-sm-4">
+                      <input type="text" id="name" name="name" class="form-control" placeholder="name of your campaign">
+                    </div>
+                  </div>
+                 
+                  <div class="form-group row">
+                    <label for="price"  class="col-md-2 col-form-label font-weight-bold">Coupon Price</label>
+                    <div class="col-sm-4">
+                    <input type="text" id="price" name="price" class="form-control" placeholder="price">
+                    </div>
+                  </div>
+
+                  <div class="form-group row">
+                    <label for="startdate" class="col-md-2 col-form-label font-weight-bold" >Start Date</label>
+                    <div class="col-md-4">          
+                        <input type="date" id="startdate" class="form-control" name="startdate" placeholder="start date">
+                    </div>
+                    </div>
+                    
+                    <div class="form-group row">
+                    <label for="enddate" class="col-md-2 col-form-label font-weight-bold">End Date</label>
+                    <div class="col-md-4">
+                    <input type="date" id="enddate" class="form-control" name="enddate" placeholder="end date">
+                    </div>
+                    </div>
+
+
+                    <div class="form-group row">
+                        <label for="coupons" class="col-md-2 col-form-label font-weight-bold">No of Coupons</label>
+                        <div class="col-md-4">
+                        <input type="text" id="coupons"  class="form-control" name="coupons" placeholder="coupons">
+                        </div>
+                        </div> 
+                  
+                    <div class="form-group row">
+                    <label for="status" class="col-sm-2 col-form-label font-weight-bold">Active Status</label>
+                    <div class="col-md-4">
+                    <!-- <input type="text" id="astatus" class="form-control" name="astatus" placeholder="yes or no"> -->
+                    <div class="form-check-inline">
+                      <label class="form-check-label">
+                        <input type="radio" id="status" class="form-check-input" name="optradio">Yes
+                      </label>
+                    </div>
+                    <div class="form-check-inline">
+                      <label class="form-check-label">
+                        <input type="radio" id="status" class="form-check-input" name="optradio">No
+                      </label>
+                    </div>
+                    
+                    </div>
+                    </div>
+
+
+                    <div class="row">
+                      <div class="col text-center">
+                        <button class="btn btn-default"> </button>
+                        <input type="button"  class=" btn btn-default btn-primary" value="Submit" onclick="generateCouponData()">
+                      </div>
+                    </div>
+                   
+                  </form>
+                </div>
+        </div>
+        <hr> 
+
 
         <!-- DataTables Example -->
         <div class="card mb-3">
           <div class="card-header">
             <i class="fas fa-table"></i>
-            Redeem Data Table</div>
+            Data Table Example</div>
           <div class="card-body">
             <div class="table-responsive">
               <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                <thead>
+                  <thead>
                   <tr>
-                    <th>ID</th>
-                    <th>Customer email</th>
                     <th>Campaign Name</th>
-                    <th>Coupon Code</th>
-                    <th>Amount</th>
-                    <th>Redeem date</th>
                     <th>Status</th>
-                  </tr>
-                </thead>
-                <tfoot>
+                    <th>Redeem Office</th>
+                    <th>Quantity</th>
+                    <th>Start date</th>
+                    <th>Expiry date</th>
+                    <th>Redeem Amount</th>
+                    </tr>
+                    </thead>
+                    <tfoot>
                   <tr>
-                      <th>ID</th>
-                      <th>Customer email</th>
-                      <th>Campaign Name</th>
-                      <th>Coupon Code</th>
-                      <th>Amount</th>
-                      <th>Redeem date</th>
-                      <th>Status</th>
+                    <th>Campaign Name</th>
+                    <th>Status</th>
+                    <th>Redeem Office</th>
+                    <th>Quantity</th>
+                    <th>Start date</th>
+                    <th>Expiry date</th>
+                    <th>Redeem Amount</th>
+                    </tr>
+                    </tfoot>
+                    <tbody>
+                  <tr>
+                    <td>Discounts %</td>
+                    <td>Active</td>
+                    <td>Edinburgh</td>
+                    <td>100</td>
+                    <td>2011/04/25</td>
+                    <td>2015/04/25</td>
+                    <td>20%</td>
                   </tr>
-                </tfoot>
-                <tbody>
-                 <tr>
-                    <td>1</td>
-                    <td>chary@email.com</td>
+                  <tr>
+                    <td>Discounts value off</td>
+                    <td>Active</td>
+                    <td>Hyderabad</td>
+                    <td>600</td>
+                    <td>2011/04/25</td>
+                    <td>2015/04/25</td>
+                    <td>$320</td>
+                  </tr>
+                  <tr>
                     <td>Discounts</td>
-                    <td>SWIGGYIT</td>
-                    <td>200</td>
-                    <td>2019/06/27</td>
-                    <td>SUCCESS</td>
+                    <td>Not Active</td>
+                    <td>Edin Garden</td>
+                    <td>61</td>
+                    <td>2009/04/25</td>
+                    <td>2011/04/25</td>
+                    <td>$320</td>
                   </tr>
                   <tr>
-                      <td>2</td>
-                      <td>Customer1@email.com</td>
-                      <td>Discounts value off</td>
-                      <td>200OFF</td>
-                      <td>200</td>
-                      <td>2019/06/27</td>
-                      <td>SUCCESS</td>
-                    </tr>                 <tr>
-                        <td>3</td>
-                        <td>Customer2@email.com</td>
-                        <td>Discounts</td>
-                        <td>50%OFF</td>
-                        <td>2000</td>
-                        <td>2019/06/27</td>
-                        <td>FAILED</td>
-                      </tr>                 <tr>
-                          <td>4</td>
-                          <td>Customer3@email.com</td>
-                          <td>Discounts</td>
-                          <td>COUPON12</td>
-                          <td>200</td>
-                          <td>2019/06/27</td>
-                          <td>SUCCESS</td>
-                        </tr>
+                    <td>Discounts</td>
+                    <td>Active</td>
+                    <td>Edinburgh</td>
+                    <td>61</td>
+                    <td>2011/04/25</td>
+                    <td>2015/04/25</td>
+                    <td>$320</td>
+                  </tr>
+                  <tr>
+                    <td>Discounts</td>
+                    <td>Active</td>
+                    <td>Edinburgh</td>
+                    <td>61</td>
+                    <td>2011/04/25</td>
+                    <td>2015/04/25</td>
+                    <td>$320</td>
+                  </tr>
+                  <tr>
+                    <td>Discounts</td>
+                    <td>Active</td>
+                    <td>Edinburgh</td>
+                    <td>61</td>
+                    <td>2011/04/25</td>
+                    <td>2015/04/25</td>
+                    <td>$320</td>
+                  </tr>
+                  <tr>
+                    <td>Discounts</td>
+                    <td>Active</td>
+                    <td>Edinburgh</td>
+                    <td>61</td>
+                    <td>2011/04/25</td>
+                    <td>2015/04/25</td>
+                    <td>$320</td>
+                  </tr>
                 </tbody>
               </table>
             </div>
@@ -249,7 +360,8 @@
     <!-- /.content-wrapper -->
 
   </div>
-  <!-- /#wrapper -->
+
+<!-- /#wrapper -->
 
   <!-- Scroll to Top Button-->
   <a class="scroll-to-top rounded" href="#page-top">
@@ -291,6 +403,78 @@
 
   <!-- Demo scripts for this page-->
   <script src="js/demo/datatables-demo.js"></script>
+  <script>
+    function showhideAddCampaign() {
+    var x = document.getElementById("addcampaign");
+    if (x.style.display === "none") {
+      x.style.display = "block";
+    } else {
+      x.style.display = "none";
+    }
+  }
+  async function generateCampaignData() {
+  //     {
+  //     "campaignId": "5d46a9ca89f17d1cd12e69ed",
+  //     "quantity":"20",
+  //     "customerId":"12345678",
+  //     "startdate":"04-Aug-2019",
+  //     "enddate":"04-Sep-2019",
+  //     "status":"Active",
+  //     "amount":"2000"
+  // }
+      campaignData = {    
+        name: document.getElementById("name").value,
+        price: document.getElementById("price").value,
+        vouchers: document.getElementById("coupons").value,
+        startdate: document.getElementById("startdate").value,
+        enddate: document.getElementById("enddate").value,
+        status: document.getElementById("status").value     
+      };
+      console.log("campaign" + JSON.stringify(campaignData));
+     // alert("campaignData"+ campaignData)
+      const res3 = await createCampaign();
+      console.log("response"+JSON.stringify(res3));
+    //  if (res3.message === "Created Campaign") {
+        alert("Created compaign successfully");
+        console.log("Created compaign successfully");
+        var x = document.getElementById("addcampaign");     
+          x.style.display = "none";
+        
+      //   document.getElementById("close").click();
+      //   document.getElementById("registered").click();
+      }
+   // }
+  // function for adding coupon
+  async function createCampaign() {
+    let HOST_URL="http://localhost:3000"
+      let result;
+      
+      let token="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InJvaGl0aDhAZ21haWwuY29tIiwidXNlcklkIjoiNWQ0YTcwOGExNTI3YjkzMDk2ODNhNTNiIiwiaWF0IjoxNTY1MTY0Nzg2LCJleHAiOjE1NjUxNjgzODZ9.OYEzJQrVtQSF9cE_2E7XrcKnUWvO-8DOt7AK01PNwZw";
+      var Success = false;
+
+      try {
+  
+        result = await $.ajax({
+          url: HOST_URL + "/" + "vouchers",
+          headers: { 'authorization': 'Bearer ' + token },
+          type: 'post',
+          data: JSON.stringify(campaignData),
+          contentType: 'application/json;charset=UTF-8',
+          dataType: 'json'
+        });
+        return result;
+      }
+      catch (error) {
+        if (error) {
+          console.log(error);
+        }
+      }
+  }  
+    
+  
+  
+  
+    </script>
 
 </body>
 

@@ -28,13 +28,13 @@
         <form>
           <div class="form-group">
             <div class="form-label-group">
-              <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required="required" autofocus="autofocus">
+              <input type="email" id="email" name="email" class="form-control" placeholder="Email address" required="required" autofocus="autofocus">
               <label for="inputEmail">Email address</label>
             </div>
           </div>
           <div class="form-group">
             <div class="form-label-group">
-              <input type="password" id="inputPassword" class="form-control" placeholder="Password" required="required">
+              <input type="password" id="password" name="password" class="form-control" placeholder="Password" required="required">
               <label for="inputPassword">Password</label>
             </div>
           </div>
@@ -46,7 +46,9 @@
               </label>
             </div>
           </div>
-          <a class="btn btn-primary btn-block" href="index.html">Login</a>
+          <!-- <button type="button"  class="btn btn-primary btn-lg login-button swal">login</button> -->
+
+          <button onclick="login()" class="btn btn-primary btn-block" href="index.html">Login</button>
         </form>
         <div class="text-center">
           <a class="d-block small mt-3" href="register.html">Register an Account</a>
@@ -62,6 +64,45 @@
 
   <!-- Core plugin JavaScript-->
   <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+  <script>
+
+
+  async function login() {
+        email = $("#email").val();
+        password = $("#password").val();
+       
+        data = {
+        email: email,
+        password:password,
+        }
+
+       console.log(data);
+
+      var params = {
+        type : 'post',
+        url: "localhost:3000/user/login",
+        data: JSON.stringify(data),
+        contentType: 'application/json;charset=UTF-8',
+        dataType: 'json'
+    }
+    console.log(params.data);
+    let result;
+    try {
+        result = await $.ajax(params);
+        return result;
+    }
+    catch (error) {
+        if (error) {
+            console.log(error);
+      }
+    }
+
+    alert('success');
+  }
+
+
+</script>
 
 </body>
 
